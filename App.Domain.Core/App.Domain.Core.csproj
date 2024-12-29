@@ -12,6 +12,8 @@
     <Folder Include="Atm\Transaction\enums\" />
     <Folder Include="Atm\User\enums\" />
     <Folder Include="Atm\User\Dto\" />
+    <Folder Include="Atm\VerificationCode\Data\" />
+    <Folder Include="Atm\VerificationCode\Service\" />
   </ItemGroup>
 
 </Project>
