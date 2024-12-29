@@ -1,5 +1,6 @@
 ﻿using App.Domain.Core.Atm.Card.AppService;
 using App.Domain.Core.Atm.Card.Data.Repository;
+using App.Domain.Core.Atm.Card.Service;
 using App.Domain.Core.Atm.Result.Entitiy;
 using System;
 using System.Collections.Generic;
@@ -11,26 +12,54 @@ namespace App.Domain.AppService.Atm.Card
 {
     public class CardAppService : ICardAppService
     {
-        private readonly ICardRepository _cardRepository;
+        private readonly ICardService _cardService;
 
-        public CardAppService(ICardRepository cardRepository)
+        public CardAppService(ICardService cardService)
         {
-            _cardRepository = cardRepository;
+            _cardService = cardService;
         }
 
         public void ChangePassword(string cardNumbert, string password, string newPassword)
         {
-            throw new NotImplementedException();
+            var card = _cardService.GetCardBy(cardNumbert);
+            if (password == card.Password)
+            {
+                card.Password = newPassword;
+                _cardService.ChangePassword(cardNumbert, password, newPassword);
+            }
         }
 
         public string GetCardBalance(string cardNumber)
         {
-            throw new NotImplementedException();
+            var card = _cardService.GetCardBy(cardNumber);
+            if (card is null)
+            {
+                return "404";
+            }
+            else
+            {
+                return $"your card balance : {card.Balance}";
+            }
         }
 
         public Result PasswordIsValid(string cardNumber, string password)
         {
-            throw new NotImplementedException();
+            var count = _cardService.GetWrongPasswordCount(cardNumber);
+
+            if (count > 3)
+            {
+                return new Result() { IsSuccess = false, Erorr = "wrong password attemp limit reached" };
+            }
+            var passwordValid = _cardService.PasswordIsValid(cardNumber, password);
+            if (passwordValid == false)
+            {
+                return new Result() { IsSuccess = false, Erorr = "Password is incorrect!" };
+            }
+            else
+            {
+                _cardService.ClearWrongPasswordTry(cardNumber);
+                return new Result() { IsSuccess = true, Erorr = "Welcome!" };
+            }
         }
     }
 }

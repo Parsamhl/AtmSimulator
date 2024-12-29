@@ -1,4 +1,5 @@
-﻿using App.Domain.Core.Atm.Card.Service;
+﻿using App.Domain.Core.Atm.Card.Data.Repository;
+using App.Domain.Core.Atm.Card.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,49 +10,56 @@ namespace App.Domain.Service.Atm.Card
 {
     public class CardService : ICardService
     {
+
+        private readonly ICardRepository _cardRepository;
+        public CardService(ICardRepository cardRepository)
+        {
+            _cardRepository = cardRepository;
+        }
+
         public bool CardIsActive(string cardNumber)
         {
-            throw new NotImplementedException();
+            return _cardRepository.CardIsActive(cardNumber);
         }
 
         public void ChangePassword(string cardNumber, string password, string newPassword)
         {
-            throw new NotImplementedException();
+            _cardRepository.ChangePassword(cardNumber, password, newPassword);
         }
 
         public void ClearWrongPasswordTry(string cardNumber)
         {
-            throw new NotImplementedException();
+            _cardRepository.ClearWrongPasswordTry(cardNumber);
         }
 
         public void Deposite(string cardNo, float amount)
         {
-            throw new NotImplementedException();
+            _cardRepository.Deposite(cardNo, amount);
         }
 
         public Core.Atm.Card.Entities.Card GetCardBy(string cardNumber)
         {
-            throw new NotImplementedException();
+            return _cardRepository.GetCardBy(cardNumber);
         }
 
         public int GetWrongPasswordCount(string cardNo)
         {
-            throw new NotImplementedException();
+            return _cardRepository.GetWrongPasswordCount(cardNo);
         }
 
         public bool PasswordIsValid(string cardNumber, string password)
         {
-            throw new NotImplementedException();
+            return _cardRepository.PasswordIsValid(cardNumber, password);
         }
 
         public void SetWrongPasswordTry(string cardNo)
         {
-            throw new NotImplementedException();
+            _cardRepository.SetWrongPasswordTry(cardNo);
         }
 
         public void Whitdraw(string cardNo, float amount)
         {
-            throw new NotImplementedException();
+            _cardRepository.Whitdraw(cardNo, amount);
         }
     }
 }
