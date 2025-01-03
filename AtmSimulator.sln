@@ -19,26 +19,26 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBase", "DataBase", "{37
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAcess", "DataAcess", "{713FECF9-B696-4D63-A7C1-FA79A1880A9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Domain.Core", "App.Domain.Core\App.Domain.Core.csproj", "{A8ACCFD1-376F-4BF2-841E-7FF0ED152B66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Domain.Core", "App.Domain.Core\App.Domain.Core.csproj", "{A8ACCFD1-376F-4BF2-841E-7FF0ED152B66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Domain.Service", "App.Domain.Service\App.Domain.Service.csproj", "{2B1462AB-D51F-4DD7-ADEA-E1B426497A51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Domain.Service", "App.Domain.Service\App.Domain.Service.csproj", "{2B1462AB-D51F-4DD7-ADEA-E1B426497A51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Domain.AppService", "App.Domain.AppService\App.Domain.AppService.csproj", "{B72D3A34-571A-4FE8-9867-8160E6440914}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Domain.AppService", "App.Domain.AppService\App.Domain.AppService.csproj", "{B72D3A34-571A-4FE8-9867-8160E6440914}"
 	ProjectSection(ProjectDependencies) = postProject
 		{A8ACCFD1-376F-4BF2-841E-7FF0ED152B66} = {A8ACCFD1-376F-4BF2-841E-7FF0ED152B66}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.infra.DB.SQLServer", "App.infra.DB.SQLServer\App.infra.DB.SQLServer.csproj", "{9A4CF026-C83E-4963-834C-9A1222246B59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.infra.DB.SQLServer", "App.infra.DB.SQLServer\App.infra.DB.SQLServer.csproj", "{9A4CF026-C83E-4963-834C-9A1222246B59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.infra.DataRepo.Ef", "App.infra.DataRepo.Ef\App.infra.DataRepo.Ef.csproj", "{9CF341BC-4D70-48EB-AC33-569D7D003674}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.infra.DataRepo.Ef", "App.infra.DataRepo.Ef\App.infra.DataRepo.Ef.csproj", "{9CF341BC-4D70-48EB-AC33-569D7D003674}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtmMVC", "AtmMVC\AtmMVC.csproj", "{8933838F-A285-4E4E-BC77-D21387A62D17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtmMVC", "AtmMVC\AtmMVC.csproj", "{8933838F-A285-4E4E-BC77-D21387A62D17}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "packages", "packages", "{223C53EE-D3C4-4807-973B-0142E45F14F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppPackages", "AppPackages\AppPackages.csproj", "{95C3BCE7-7167-40A8-A460-E713E9EC1834}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppPackages", "AppPackages\AppPackages.csproj", "{95C3BCE7-7167-40A8-A460-E713E9EC1834}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.infra.VerificationTxtFile", "App.infra.VerificationTxtFile\App.infra.VerificationTxtFile.csproj", "{A0C06261-3144-4BC1-89BE-B46FDA021890}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.infra.VerificationTxtFile", "App.infra.VerificationTxtFile\App.infra.VerificationTxtFile.csproj", "{A0C06261-3144-4BC1-89BE-B46FDA021890}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

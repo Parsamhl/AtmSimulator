@@ -1,12 +1,13 @@
-using AtmMVC.Models;
 using Microsoft.AspNetCore.Mvc;
+using AtmMVC;
 using System.Diagnostics;
+using AtmMVC.Models;
 
-namespace AtmMVC.Controllers
+namespace Quiz2.Endpoints.MVC.Controllers
 {
     public class HomeController : Controller
     {
-        private  ILogger<HomeController> _logger;
+        private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
         {

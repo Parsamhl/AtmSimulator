@@ -64,7 +64,7 @@ namespace App.infra.DataRepo.Ef.Atm.Card
         {
             var card = _context.cards.FirstOrDefault(c => c.CardNumber == cardNumber);
 
-            _context.Entry(card).Reload();
+            //_context.Entry(card).Reload();
             if (card == null)
             {
                 throw new Exception($"card by number bot found {cardNumber}");
