@@ -1,17 +1,21 @@
 ﻿using App.Domain.Core.Atm.Card.AppService;
+using App.Domain.Core.Atm.Transaction.AppService;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AtmMVC.Controllers
 {
     public class LoginController : Controller
     {
-        public readonly ICardAppService _cardAppService;
+        private readonly ICardAppService _cardAppService;
+        private readonly ITransactionAppService _transactionAppService;
 
-        public LoginController(ICardAppService cardAppService)
+
+        public LoginController(ICardAppService cardAppService , ITransactionAppService transactionAppService )
         {
             _cardAppService = cardAppService;
+            _transactionAppService = transactionAppService;
         }
-        public ActionResult Index()
+        public IActionResult Index()
         {
             return View();
         }
