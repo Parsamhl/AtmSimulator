@@ -17,5 +17,11 @@ namespace AtmMVC.Controllers
         {
             return View();
         }
+
+        public IActionResult TransferMoney(string sourceCardNumber , string DestinationCardNumber , float amount)
+        {
+            _transactionAppService.TransferMoney(sourceCardNumber , DestinationCardNumber , amount);
+            return RedirectToAction("Index" , "Home");
+        }
     }
 }

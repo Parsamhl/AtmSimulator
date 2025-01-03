@@ -4,20 +4,29 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AtmMVC.Controllers
 {
-    public class LoginController : Controller
-    {
-        private readonly ICardAppService _cardAppService;
-        private readonly ITransactionAppService _transactionAppService;
+	public class LoginController : Controller
+	{
+		private readonly ICardAppService _cardAppService;
+		private readonly ITransactionAppService _transactionAppService;
 
 
-        public LoginController(ICardAppService cardAppService , ITransactionAppService transactionAppService )
-        {
-            _cardAppService = cardAppService;
-            _transactionAppService = transactionAppService;
-        }
-        public IActionResult Index()
-        {
-            return View();
-        }
-    }
+		public LoginController(ICardAppService cardAppService, ITransactionAppService transactionAppService)
+		{
+			_cardAppService = cardAppService;
+			_transactionAppService = transactionAppService;
+		}
+		public IActionResult Index()
+		{
+			return View();
+		}
+
+
+
+		public IActionResult Login(string cardNumber , string password)
+		{
+
+			_cardAppService.PasswordIsValid(cardNumber, password);
+			return RedirectToAction("Index" , "Transaction");
+		}
+	}
 }
